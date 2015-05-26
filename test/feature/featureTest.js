@@ -2,14 +2,6 @@
 import Cycle from 'cyclejs';
 import intent from '../../app/scripts/intent';
 
-let interactions = {
-  get: (selector, eventname) => {
-    return Cycle.Rx.Observable.create(() => {
-      return 'bla';
-    });
-  }
-};
-
 describe('module to test', () => {
 
   it('should provide prop1', () => {
@@ -26,12 +18,5 @@ describe('module to test', () => {
   });
   it('should provide stream1', () => {
     expect(intent(interactions).abc$).toBeDefined();
-  });
-  it('should provide stream2', () => {
-    let stream = intent(interactions).qwer$;
-    stream.map((data) => {
-      console.log(data);
-      expect(data).toEqual('bla');
-    })
   });
 });
