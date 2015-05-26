@@ -28,7 +28,7 @@ gulp.task('dist', ['clean'], () => gulp.start('distCleaned'));
 /**
  * build all the things
  */
-gulp.task ('devCleaned', ['watch'], () => gulp.start('webserver'));
+gulp.task ('devCleaned', ['watch']);
 gulp.task ('distCleaned', ['test', 'build:scripts', 'build:styles', 'move:static']);
 
 
