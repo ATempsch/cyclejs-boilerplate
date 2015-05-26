@@ -3,12 +3,6 @@
 //gulp plugins
 import gulp from 'gulp';
 import less from 'gulp-less';
-import gutil from 'gulp-util';
-import tap from 'gulp-tap';
-import plumber from 'gulp-plumber';
-import transpile from 'gulp-es6-module-transpiler';
-import sourcemaps from 'gulp-sourcemaps';
-import babel from 'gulp-babel';
 
 //other plugins
 import browserify from 'browserify';
@@ -19,7 +13,6 @@ import source from 'vinyl-source-stream';
 gulp.task('build:scripts', ['lint'], _scripts);
 gulp.task('build:styles', _styles);
 gulp.task('move:static', _static);
-gulp.task('build:tests', ['lint'], _tests);
 
 /**
  * browserifies your app
@@ -63,18 +56,4 @@ function _styles() {
 function _static() {
   return gulp.src(['app/**/*.html', 'app/**/*.png'])
     .pipe(gulp.dest('dist'))
-}
-
-/**
- * transpiles all sourcefiles required by tests
- *
- * @src: provide the path to your tests
- * @dest: provide your temporary tests dir
- * */
-function _tests() {
-  return gulp.src(['test/**/*.js'])
-    .pipe(plumber())
-    .pipe(transpile())
-    .pipe(babel())
-    .pipe(gulp.dest('.tests'))
 }

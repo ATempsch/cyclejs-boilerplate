@@ -3,16 +3,24 @@ module.exports = function (config) {
     basePath: '.',
 
     frameworks: [
-      'jasmine'
+      'jasmine',
+      'browserify'
+    ],
+
+    files: [
+      'test/**/*.js'
     ],
 
     preprocessors: {
-      '**/.tests/**/*.js': ['coverage']
+      '**/test/**/*.js': ['browserify']
     },
 
-    files: [
-      '.tests/**/*.js'
-    ],
+    browserify: {
+      transform: ['babelify', 'istanbulify'],
+      extensions: ['.js'],
+      debug: true,  // make stack traces readable.
+      bundleDelay: 1000  // WAR for karma-browserify race condition
+    },
 
     reporters: ['progress', 'coverage'],
     colors: true,
@@ -23,8 +31,6 @@ module.exports = function (config) {
     port: 9876,
     browsers: ['PhantomJS'],
 
-    coverageReporter: {
-      type : 'text'
-    }
+    coverageReporter: {type : 'text' }
   });
 };

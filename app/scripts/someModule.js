@@ -1,3 +1,4 @@
+/* istanbulify ignore next */
 import Cycle from 'cyclejs';
 
 export default function intent() {
@@ -7,6 +8,7 @@ export default function intent() {
     qewr: true,
     iuzt: () => {
       return 'foo';
-    }
+    },
+    abc: () => 'bla'
   };
 }
