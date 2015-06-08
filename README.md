@@ -9,7 +9,7 @@ direction somewhere, feel free to share your thoughts. it's highly appreciated! 
 i try to be as complete as possible with commenting, so maybe someone can save an hour or two for not learning the hard way.
 
 
-###Short description which packages i used and what's its purpose.
+###Short description which packages i used and what's their purpose.
 
 | Packages used | Why?         |
 | ------------- | ------------ |
