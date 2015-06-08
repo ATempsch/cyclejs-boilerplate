@@ -1,7 +1,6 @@
 'use strict';
 
 import gulp from 'gulp';
-import runSequence from 'run-sequence'
 
 gulp.task('watch:static', ['move:static'], () => {
   gulp.watch(['app/**.html', 'app/*.png'], ['move:static']);

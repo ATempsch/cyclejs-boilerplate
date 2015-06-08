@@ -1,27 +1,14 @@
----
-parser: babel-eslint
-env:
-  node: true
-  browser: true
-globals:
-  fetch: true
-  noop: true
-  React: true
-rules:
-  strict: 0
-  quotes: single
-  no-multi-spaces: 0
-  key-spacing: 0
-  comma-spacing: 0
-  curly: 0
-  no-use-before-define: 0
-  no-cond-assignment: 0
-  no-debugger: 0
-  no-extra-boolean-cast: 0
-  no-unused-expressions: 0
-  no-shadow: 0
-  no-underscore-dangle: 0
-  no-unused-vars:
-    - 0
-    - vars: all
-    - args: after-used
+{
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "quotes": [2, "single"],
+    "strict": [2, "never"]
+  }
+}

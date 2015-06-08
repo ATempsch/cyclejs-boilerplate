@@ -1,8 +1,21 @@
 /* istanbulify ignore file */
 import Cycle from 'cyclejs';
-import intent from '../../app/scripts/intent';
+import intent from '../app/scripts/intent';
+
+let interactions = {};
+
+function makeEmptyInteractions() {
+  return {
+    get() {
+      return Cycle.Rx.Observable.empty();
+    }
+  };
+}
 
 describe('module to test', () => {
+  beforeEach(() => {
+    interactions = makeEmptyInteractions();
+  })
 
   it('should provide prop1', () => {
     expect(intent(interactions).bla).toBeFalsy();
@@ -14,9 +27,6 @@ describe('module to test', () => {
     expect(intent(interactions).qewr).toBeTruthy();
   });
   it('should provide func1', () => {
-    expect(intent(interactions).iuzt()).toEqual('foo');
-  });
-  it('should provide stream1', () => {
-    expect(intent(interactions).abc$).toBeDefined();
+    expect(intent(interactions).iuzt$).toEqual(interactions.get());
   });
 });

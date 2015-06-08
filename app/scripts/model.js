@@ -1,19 +1,15 @@
 import Cycle from 'cyclejs';
 
 function makeModification$(intent) {
-  let abcMod$ = intent.abc$.map((evdata) => (data) => {
-    data.bla = evdata;
-    return data;
-  });
-  let qwerMod$ = intent.qwer$.map((evdata) => (data) => {
+  let iuztMod$ = intent.iuzt$.map(() => (data) => {
+    data.bla = 'foo';
     return data;
   });
 
-  return Cycle.Rx.Observable.merge(abcMod$, qwerMod$);
+  return Cycle.Rx.Observable.merge(iuztMod$);
 }
 
 function model(intent, source) {
-
   let modifcation$ = makeModification$(intent);
 
   return modifcation$

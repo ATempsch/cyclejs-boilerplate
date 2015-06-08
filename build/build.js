@@ -6,8 +6,8 @@ import less from 'gulp-less';
 
 //other plugins
 import browserify from 'browserify';
-import istanbul from 'browserify-istanbul';
 import babelify from 'babelify';
+import minifyify from 'minifyify';
 import source from 'vinyl-source-stream';
 
 gulp.task('build:scripts', ['lint'], _scripts);
@@ -26,6 +26,7 @@ function _scripts() {
     entries: './app/index.js',
     debug: true
   }).transform(babelify)
+    .plugin(minifyify, {map: '/output.json', output: './dist/output.json'})
     .bundle()
     .on('error', (err) => {
       console.log(err.message);
@@ -54,6 +55,6 @@ function _styles() {
  * @dest: provide your distribution path
  * */
 function _static() {
-  return gulp.src(['app/**/*.html', 'app/**/*.png'])
+  return gulp.src(['app/**/*.{png,gif,jpg,html}'])
     .pipe(gulp.dest('dist'))
 }

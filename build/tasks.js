@@ -9,7 +9,6 @@ import testTasks from './test';
 import watchTasks from './watch';
 import serverTasks from './server';
 import cleanTasks from './clean';
-import vendorTasks from './vendor';
 
 gulp.task('default', () => {
   gutil.log(gutil.colors.magenta('#########################################'));
