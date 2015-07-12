@@ -1,8 +1,8 @@
-export default function intent(interactions) {
+export default function intent(DOM) {
   return {
     bla: false,
     asdf: true,
     qewr: true,
-    iuzt$: interactions.get('#button', 'click')
+    iuzt$: DOM.get('#button', 'click')
   };
 }

@@ -1,4 +1,4 @@
-import Cycle from 'cyclejs';
+import Cycle from '@cycle/core';
 
 let data = {
   bla: 'asdf'

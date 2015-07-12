@@ -1,4 +1,4 @@
-import Cycle from 'cyclejs';
+import Cycle from '@cycle/core';
 
 function makeModification$(intent) {
   let iuztMod$ = intent.iuzt$.map(() => (data) => {

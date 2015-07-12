@@ -1,5 +1,5 @@
 /* istanbulify ignore file */
-import Cycle from 'cyclejs';
+import Cycle from '@cycle/core';;
 import intent from '../app/scripts/intent';
 
 let interactions = {};

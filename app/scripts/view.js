@@ -1,5 +1,4 @@
-import Cycle from 'cyclejs';
-let {Rx, h} = Cycle;
+import {h} from '@cycle/web';
 
 export default function view(model$) {
   return model$.map(data => {
